@@ -5,25 +5,30 @@ public class Main {
         int IS_PART_TIME = 2;
         int WAGE_PER_HR = 20;
 
-        int empHrs;
-        int empWage;
+        int empHrs = 0;
+        int empWage = 0;
         double check = Math.floor(Math.random() * 10) % 3;
 
         System.out.println("---------------------------------------------");
         System.out.println("Welcome to Employee Wage Computation Problem.");
         System.out.println("---------------------------------------------");
 
-        if (check == IS_FULL_TIME){
-            System.out.println("Employee is Present.");
-            empHrs = 8;
-        } else if (check == IS_PART_TIME) {
-            System.out.println("Employee is Present Part-time.");
-            empHrs = 4;
-        } else{
-            System.out.println("Employee is Absent.");
-            empHrs = 0;
-        }
+        switch((int)check) {
+            case 1:
+                System.out.println("Employee is Present.");
+                empHrs = 8;
+                break;
 
+            case 2:
+                System.out.println("Employee is Present Part-time.");
+                empHrs = 4;
+                break;
+
+            default:
+                System.out.println("Employee is Absent.");
+                empHrs = 0;
+                break;
+        }
         empWage = empHrs * WAGE_PER_HR;
         System.out.println("Employee Wage: " + empWage);
     }
